@@ -1,0 +1,28 @@
+{% extends 'freeboard/base.html' %}
+
+{% block board_title %}
+<p>{{ boards.id }}번</p>
+{% endblock %}
+
+
+{% block board_content %}
+<div>
+    <ul>
+        <li>제목 : {{ boards.title }}</li>
+        <li>내용 : {{ boards.text }}</li>
+        <li>작성일 : {{ boards.created_date }}</li>
+        <li>수정일 : {{ boards.modified_date }}</li>
+    </ul>
+</div>
+
+<hr>
+{% for comment in post.comments.all %}
+        {{ comment.created_date }}
+        {{ comment.author }}
+        {{ comment.text|linebreaks }}
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}
+
+
+{% endblock %}

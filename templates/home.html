@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Hotel & Tourist spot{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+{% else %}로그인 후 보다 많은 기능을 확인해 보세요^^.
+{% endif %}
+
+{% endblock %}

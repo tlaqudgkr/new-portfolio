@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}로그인{% endblock %}
+
+{% block content %}
+{% if form.errors %}
+<p>아이디와 비밀번호가 다릅니다. 다시 입력하세요.</p>
+{% endif %}
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>페이지에 대한 액세스 권한이 없습니다. 계속 진행하시려면 로그인 해주십시오.</p>
+    {% else %}
+    <p>로그인 후 이용해주세요.</p>
+    {% endif %}
+{% endif %}
+
+<form action="" method="post">
+    <ul>
+        {% csrf_token %}
+        <li>{{ form.username.label_tag }}{{ form.username }}</li>
+        <li>{{ form.password.label_tag }}{{ form.password }}</li>
+        <button type="submit">로그인</button>
+        <input type="hidden" name="next" value="{{ next }}">
+        <p>아직 회원이 아니세요? <a href="{% url 'register' %}">회원가입</a>하러가기</p>
+    </ul>
+</form>
+
+{% endblock %}

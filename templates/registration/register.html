@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}회원가입{% endblock %}
+{% block content %}
+{% if form.errors %}
+<p>아이디와 비밀번호를 다시 확인하세요.</p>
+{% endif %}
+<p>회원가입을 위해 아이디와 비밀번호를 입력하세요.</p>
+<form action="" method="post">
+    <ul>
+        {% csrf_token %}
+        <li>{{ form.username.label_tag }}{{ form.username }}</li>
+        <li>{{ form.password1.label_tag }}{{ form.password1 }}</li>
+        <li>{{ form.password2.label_tag }}{{ form.password2 }}</li>
+        <button type="submit">회원가입</button>
+    </ul>
+</form>
+{% endblock %}

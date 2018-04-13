@@ -1,0 +1,78 @@
+{% extends 'hotel/base.html' %}
+
+{% block sub_content_hotel %}
+<div>
+    <h1>호텔 : {{ object.name }}</h1>
+
+    <h3>호텔 사진</h3>
+    <p>----------------사진 구역-----------------</p>
+
+    <h3>호텔 소개</h3>
+    <p>{{ object.text }}</p>
+
+    <h3>호텔 시설</h3>
+    <ul>
+        {% for facility in object.facility_set.all %}
+        <li>{{ facility.get_facilityname_display }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>호텔 객실</h3>
+    <ul>
+        {% for room in object.room_set.all %}
+        <li>{{ room.get_roomname_display }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>호텔 위치</h3>
+    <div id="mapholder"></div>
+
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyDywxHoX-tjQ3Cb_TlDyUTmNspIu6LzW_o"></script>
+
+    <script>
+    window.onload = function() {
+    showPosition()
+    };
+    var x = document.getElementByid("demo");
+        function showPosition() {
+            var lat = {{ object.lat }};
+            var lon = {{ object.lon }};
+            var latlon = new google.maps.LatLng(lat, lon)
+            var mapholder = document.getElementById('mapholder')
+            mapholder.style.height = '250px';
+            mapholder.style.width = '500px';
+
+            var myOptions = {
+            center:latlon,zoom:{{ object.zoom }},
+            mapTypeId:google.maps.MapTypeId.ROADMAP,
+            mapTypeControl:false,
+            navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+            }
+
+            var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+            var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "User denied the request for Geolocation."
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Location information is unavailable."
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "The request to get user location timed out."
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "An unknown error occurred."
+                    break;
+            }
+        }
+    </script>
+
+    <h3>호텔 사이트 링크 바로가기</h3>
+    <p>해당 호텔사이트 바로가기 <a href="{{ object.site }}" target="_blank">{{ object.site }}</a></p><br><br><br><br><br><br><br>
+</div>
+
+{% endblock %}
