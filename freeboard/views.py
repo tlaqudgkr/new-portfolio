@@ -1,18 +1,26 @@
 from django.shortcuts import render, redirect
-from .models import Board, Comment
+from .models import Board, Comment, Category
 from django.shortcuts import get_object_or_404
 from .form import PostForm, CommentForm
 from django.utils import timezone
 # Create your views here.
 
 def board_list(request):
-    board = Board.objects.all()
-    return render(request, 'freeboard/board_list.html', {'boards':board})
+    # board = Board.objects.all()
+    category = Category.objects.all()
+    ctgry = request.GET.get('category')
+    if ctgry != None:
+        board = Board.objects.filter(category__name = ctgry)
+    else:
+        board = Board.objects.all()
+
+    return render(request, 'freeboard/board_list.html', {'boards':board, 'categorys':category})
 
 
 def board_detail(request, pk):
+    category = Category.objects.all()
     board = get_object_or_404(Board, pk=pk)
-    return render(request, 'freeboard/board_detail.html', {'boards':board})
+    return render(request, 'freeboard/board_detail.html', {'boards':board, 'categorys':category})
 
 
 def board_new(request):
@@ -37,7 +45,7 @@ def add_comment_to_post(request, pk):
             comment = form.save(commit=False)
             comment.post = post
             comment.save()
-            return redirect('board:post_detail', pk=post.pk)
+            return redirect('board:board_detail', pk=post.pk)
     else:
         form = CommentForm()
-    return render(request, 'freeboard/add_comment_to_post.html',{'form':form})
+    return render(request, 'freeboard/add_comment_to_post.html', {'form':form})

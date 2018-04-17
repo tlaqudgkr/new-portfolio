@@ -1,11 +1,13 @@
 {% extends 'freeboard/base.html' %}
 
+
 {% block board_title %}
-<p>{{ boards.id }}번</p>
 {% endblock %}
 
 
 {% block board_content %}
+<p>{{ boards.id }}번</p>
+
 <div>
     <ul>
         <li>제목 : {{ boards.title }}</li>
@@ -16,12 +18,13 @@
 </div>
 
 <hr>
-{% for comment in post.comments.all %}
-        {{ comment.created_date }}
-        {{ comment.author }}
-        {{ comment.text|linebreaks }}
+<a href="{% url 'board:add_comment_to_post' pk=boards.pk %}">댓글달기</a>
+{% for comment in boards.comments.all %}
+    <p>ID : {{ comment.author }}</p>
+    <p>내용 : {{ comment.text }}</p>
+    <p>{{ comment.created_date }}</p>
 {% empty %}
-    <p>No comments here yet :(</p>
+    <p>첫 댓글을 남겨 보세요.(댓글은 작성자에게 행복입니다.^^ )</p>
 {% endfor %}
 
 

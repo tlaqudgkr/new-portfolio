@@ -1,14 +1,12 @@
 {% extends 'hotel/base.html' %}
 
 {% block sub_content_hotel %}
-<h1 id="tog">Hotel List</h1>
+<h1 id="tog">Hotel List {% if user.is_authenticated %}<a href="{% url 'hotel:hotel_create' %}">호텔 추가</a></h1>
 
 <ul id="show">
-{% if user.is_authenticated %}
     {% for obj in object_list %}
     <li><a href="{% url 'hotel:hotel_detail' obj.pk %}">{{ obj }}</a></li>
     {% endfor %}
-{% endif %}
 </ul>
-
+{% endif %}
 {% endblock %}

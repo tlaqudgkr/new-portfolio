@@ -1,5 +1,6 @@
 from django.db import models
-
+import os
+from django.urls import reverse
 
 # Create your models here.
 
@@ -10,6 +11,9 @@ class Hotel(models.Model):
     lat = models.FloatField()
     zoom = models.PositiveSmallIntegerField(default=14)
     site = models.CharField(max_length=200)
+
+    def get_absolute_url(self):
+        return reverse('hotel:hoteldetail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.name
@@ -68,3 +72,13 @@ class Facility(models.Model):
     def __str__(self):
         return self.facilityname
 
+
+class Image(models.Model):
+    image = models.FileField(upload_to='images/%Y/%m/%d/', null=True)
+    hotel = models.ForeignKey(Hotel)
+
+    def filename(self):
+        return os.path.basename(self.image.name)
+
+    def __str__(self):
+        return self.image.name

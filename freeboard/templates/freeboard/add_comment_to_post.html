@@ -1,0 +1,11 @@
+{% extends 'freeboard/base.html' %}
+
+
+{% block board_content %}
+	<h1>댓글작성</h1>
+	<form method="POST">
+	    {% csrf_token %}
+	    {{ form.as_p }}
+    <button type="submit">작성</button>
+	</form>
+{% endblock %}

@@ -1,16 +1,29 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from hotel.models import Hotel, Room, Facility
+from django.views.generic.edit import CreateView
+from hotel.models import Hotel, Room, Facility, Image
 
 # Create your views here.
 
 class HotelListView(ListView):
     model = Hotel
 
-
 class HotelDetailView(DetailView):
     model = Hotel
+
+
+class HotelCreateView(CreateView):
+    model = Hotel
+    fields = ['name', 'text', 'lon', 'lat', 'zoom', 'site']
+
+    # model = Image
+    # fields = ['image']
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['image'] = Image.objects.all()
+    #     return context
 
 
 class RoomListView(ListView):
@@ -19,5 +32,3 @@ class RoomListView(ListView):
 
 class FacilityListView(ListView):
     model = Facility
-
-

@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from .views import HomeView, UserRegisterView, UserRegisterDoneView
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^freeboard/', include('freeboard.urls', namespace='board')),
@@ -25,3 +29,5 @@ urlpatterns = [
     url(r'^accounts/register/$', UserRegisterView.as_view(), name='register'),
     url(r'^accounts/register/done/$', UserRegisterDoneView.as_view(), name='register_done'),
 ]
+
+urlpatterns += static('media', document_root=settings.MEDIA_ROOT)
