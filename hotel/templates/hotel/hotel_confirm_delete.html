@@ -1,0 +1,19 @@
+{% extends 'hotel/base.html' %}
+
+{% block sub_title_hotel %}
+<p><a href="{% url 'hotel:hotel_detail' object.pk %}">{{ object }}</a>삭제대기</p>
+{% endblock %}
+
+{% block sub_content_hotel %}
+<form method="post">
+    {% csrf_token %}
+    <p>"{{ object }}"을(를) 정말 삭제하겠습니까?</p>
+    <button onclick="myfunction()" type="submit" value="예, 삭제합니다.">삭제</button>
+</form>
+
+<script>
+    function myfunction() {
+        alert("삭제가 완료되었습니다.");
+    }
+</script>
+{% endblock %}

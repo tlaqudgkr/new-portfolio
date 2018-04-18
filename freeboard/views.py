@@ -37,6 +37,27 @@ def board_new(request):
     return render(request, 'freeboard/board_edit.html', {'form':form})
 
 
+def board_edit(request, pk):
+    post = get_object_or_404(Board, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            # post.modified_date = timezone.now()
+            post.save()
+            return redirect('board:board_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'freeboard/board_edit.html', {'form':form})
+
+
+def board_remove(request, pk):
+    post = get_object_or_404(Board, pk=pk)
+    post.delete()
+    return redirect('board:board_list')
+
+
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Board, pk=pk)
     if request.method == "POST":

@@ -8,7 +8,15 @@
     {{ form.as_p }}
     <p>첨부할 이미지를 선택하세요.</p>
     {{ image.as_p }}
-    <button type="submit">저장</button>
+    <button onclick="newfunction()" type="submit">저장</button>
 </form>
+
+<script>
+    function newfunction() {
+        alert("새로운 내용이 추가 되었습니다.");
+    }
+
+</script>
+
 
 {% endblock %}
