@@ -10,9 +10,9 @@ def board_list(request):
     category = Category.objects.all()
     ctgry = request.GET.get('category')
     if ctgry != None:
-        board = Board.objects.filter(category__name = ctgry)
+        board = Board.objects.filter(category__name = ctgry).order_by('-created_date')
     else:
-        board = Board.objects.all()
+        board = Board.objects.all().order_by('-created_date')
 
     return render(request, 'freeboard/board_list.html', {'boards':board, 'categorys':category})
 

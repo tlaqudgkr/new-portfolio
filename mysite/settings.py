@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hotel',
     'freeboard',
+    'tourist',
 ]
 
 MIDDLEWARE = [

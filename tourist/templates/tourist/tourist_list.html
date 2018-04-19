@@ -1,0 +1,14 @@
+{% extends 'tourist/base.html' %}
+
+{% block tourist_title %}
+<h1>Tourist Spot</h1>
+{% endblock %}
+
+{% block tourist_content %}
+
+<ul>
+{% for obj in object_list %}
+    <li><a href="{% url 'tourist:tourist_detail' obj.pk %}">{{ obj }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

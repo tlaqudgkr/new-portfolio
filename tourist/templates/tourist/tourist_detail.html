@@ -1,0 +1,21 @@
+{% extends 'tourist/base.html' %}
+{% load static %}
+{% block tourist_title %}
+{% endblock %}
+
+{% block tourist_content %}
+
+<h1>관광지 : {{ object.name }}</h1>
+
+<h3>관광지 사진</h3>
+    {% for image in object.image_set.all %}
+        <img src="{% get_media_prefix %}{{ image }}" alt="{{ image.filename }}" width="550" height="400">
+    {% endfor %}
+
+<h3>관광지 소개</h3>
+{{ object.text }}
+
+<h3>관광지 주소</h3>
+{{ object.address }}
+
+{% endblock %}

@@ -6,7 +6,7 @@
 
     <h3>호텔 사진</h3>
 
-    <div style="height=50px, width=50px;">
+    <div>
         {% for image in object.image_set.all %}
         <img src="{% get_media_prefix %}{{ image }}" alt="{{ image.filename }}" width="550" height="400">
         {% endfor %}

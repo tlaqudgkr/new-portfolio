@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^freeboard/', include('freeboard.urls', namespace='board')),
     url(r'^hotel/', include('hotel.urls', namespace='hotel')),
+    url(r'^tourist/', include('tourist.urls', namespace='tourist')),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^accounts/register/$', UserRegisterView.as_view(), name='register'),
