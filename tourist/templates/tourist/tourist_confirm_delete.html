@@ -1,0 +1,13 @@
+{% extends 'tourist/base.html' %}
+
+{% block tourist_title %}
+<p><a href="{% url 'tourist:tourist_detail' object.pk %}">{{ object }}</a>삭제대기</p>
+{% endblock %}
+
+{% block tourist_content %}
+<form method="post">
+    {% csrf_token %}
+    <p>"{{ object }}"을(를) 정말 삭제하시겠습니까?</p>
+    <button type="submit" value="예, 삭제합니다.">삭제</button>
+</form>
+{% endblock %}

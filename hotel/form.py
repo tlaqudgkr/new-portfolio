@@ -1,5 +1,4 @@
 from django import forms
-
 from hotel.models import Image, Hotel
 
 class HotelForm(forms.ModelForm):
