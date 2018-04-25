@@ -70,3 +70,15 @@ def add_comment_to_post(request, pk):
     else:
         form = CommentForm()
     return render(request, 'freeboard/add_comment_to_post.html', {'form':form})
+
+
+def comment_approve(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.approve()
+    return redirect('board:board_detail', pk=comment.post.pk)
+
+
+def comment_remove(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.delete()
+    return redirect('board:board_detail', pk=comment.post.pk)

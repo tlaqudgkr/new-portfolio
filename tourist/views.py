@@ -9,6 +9,7 @@ from django.urls import reverse_lazy
 
 class TouristListView(ListView):
     model = Tourist
+    paginate_by = 3
 
 
 class TouristDetailView(DetailView):

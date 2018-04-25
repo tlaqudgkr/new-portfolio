@@ -20,9 +20,15 @@
 <hr>
 <a href="{% url 'board:add_comment_to_post' pk=boards.pk %}">댓글달기</a>
 {% for comment in boards.comments.all %}
-    <p>ID : {{ comment.author }}</p>
-    <p>내용 : {{ comment.text }}</p>
-    <p>{{ comment.created_date }}</p>
+    {% if user.is_authenticated or comment.approved_comment %}
+        <p>ID : {{ comment.author }}</p>
+        <p>내용 : {{ comment.text }}</p>
+        <p>{{ comment.created_date }}</p>
+        {% if not comment.approved_comment %}
+        <a href="{% url 'board:comment_approve' pk=comment.pk %}">등록</a>
+        <a href="{% url 'board:comment_remove' pk=comment.pk %}">삭제</a>
+        {% endif %}
+    {% endif %}
 {% empty %}
     <p>첫 댓글을 남겨 보세요.(댓글은 작성자에게 행복입니다.^^ )</p>
 {% endfor %}
