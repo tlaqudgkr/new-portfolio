@@ -2,7 +2,7 @@
 {% load static %}
 {% block sub_content_hotel %}
 <div>
-    <h1>호텔 : {{ object.name }} <a href="{% url 'hotel:hotel_edit' pk=hotel.pk %}">수정</a> <a href="{% url 'hotel:hotel_delete' object.pk %}">삭제</a></h1>
+    <h1>호텔 : {{ object.name }} <small><a href="{% url 'hotel:hotel_edit' pk=hotel.pk %}">수정</a> <a href="{% url 'hotel:hotel_delete' object.pk %}">삭제</a></small></h1>
 
     <h3>호텔 사진</h3>
 
