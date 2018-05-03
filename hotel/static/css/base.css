@@ -33,9 +33,16 @@ a {
 }
 
 /*    home    */
+.home {
+	background-color: rgb(104, 104, 103);
+}
 .home h1 {
 	text-align: center;
+	height: 100px;
 }
+/* .home img {
+	width: 400px;
+} */
 
 
 /*     base     */
@@ -54,4 +61,33 @@ a {
 }
 .flo .rig a:hover {
 	background-color: #464646;
+}
+
+
+
+/*     hotel      */
+
+/*      list      */
+.ho_list {
+	color: #fff;
+	background-color: skyblue;
+}
+
+/*     detail     */
+
+.ho_detail h3 {
+	margin-top: 20px;
+}
+.ho_intro p {
+	font-size: 16px;
+}
+.ho_facility li {
+	display: inline-block;
+	/* font-size: 17px; */
+}
+.ho_room li {
+	display: inline-block;
+}
+.ho_return p {
+	text-align: right;
 }
