@@ -12,23 +12,46 @@
 }
 p {
 	margin: 0;
+	text-align: justify;
 }
-h1 {
+h1, h2, h3, h4, h5 {
 	margin: 0;
 }
-
-/*     base     */
-
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 body {
 	text-align: justify;
     margin: 0;
-    color: red;
+	color: skyblue;
 }
 a {
 	color: #464646;
 	text-decoration: none;
 }
+
+/*    home    */
+.home h1 {
+	text-align: center;
+}
+
+
+/*     base     */
+
 .wrap {
-	width: 980px;
+	width: 592px;
 	margin: auto;
+}
+.flo .rig a {
+	background-color: skyblue;
+	color: #fff;
+	display: block;
+	text-align: center;
+	padding: 7px 0;
+	margin-bottom: 1px;
+}
+.flo .rig a:hover {
+	background-color: #464646;
 }

@@ -1,5 +1,11 @@
 {% extends 'hotel/base.html' %}
 
+{% block sub_title_hotel %}
+<div class="jumbotron home  " style="background-color: yellow;">
+    <h1>Hotel & Tourist Spot in Jeonju</h1>
+</div>
+{% endblock %}
+
 {% block sub_content_hotel %}
 <h1 id="tog">Hotel List {% if user.is_authenticated %}<a href="{% url 'hotel:hotel_create' %}">호텔 추가</a></h1>
 

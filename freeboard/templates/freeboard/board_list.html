@@ -1,6 +1,10 @@
 {% extends 'freeboard/base.html' %}
 
-{% block board_title %}{% endblock %}
+{% block board_title %}
+<div class="jumbotron home  " style="background-color: yellow;">
+    <h1>Hotel & Tourist Spot in Jeonju</h1>
+</div>
+{% endblock %}
 
 {% block board_content %}
 <h1>자유게시판 <a href="{% url 'board:board_new'%}">새글쓰기</a></h1>

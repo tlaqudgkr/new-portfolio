@@ -10,23 +10,27 @@
 </head>
 <body>
     <div class="wrap">
-        <nav>
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'hotel:hotel_list' %}">Hotel</a>
-            <a href="{% url 'tourist:tourist_list' %}">Tourist Spot</a>
-            <a href="{% url 'board:board_list' %}">자유게시판</a>
-
-            {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}">로그아웃</a>
-            {% else %}
-            <a href="{% url 'login' %}">로그인</a>
-            <a href="{% url 'register' %}">회원가입</a>
-            {% endif %}
-        </nav>
-
         <div>
-        {% block title %}{% endblock %}
+            {% block title %}{% endblock %}
         </div>
+        <!-- <i class="glyphicon glyphicon-align-justify"></i> -->
+        
+        <nav class="flo clearfix">
+            <div class="rig">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'hotel:hotel_list' %}">Hotel</a>
+                <a href="{% url 'tourist:tourist_list' %}">Tourist Spot</a>
+                <a href="{% url 'board:board_list' %}">자유게시판</a>
+            </div>
+            <div class="lef">
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">로그아웃</a>
+                {% else %}
+                <a href="{% url 'login' %}">로그인</a>
+                <a href="{% url 'register' %}">회원가입</a>
+                {% endif %}
+            </div>
+        </nav>
 
         <div>
         {% block content %}{% endblock %}
