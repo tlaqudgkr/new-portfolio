@@ -25,7 +25,7 @@ ul {
 body {
 	text-align: justify;
     margin: 0;
-	color: skyblue;
+	color: black;
 }
 a {
 	color: #464646;
@@ -40,17 +40,18 @@ a {
 	text-align: center;
 	height: 100px;
 }
-/* .home img {
-	width: 400px;
-} */
+.home img {
+	max-width: 100%;
+	margin-bottom: 20px;
+}
 
 
 /*     base     */
 
-.wrap {
-	width: 592px;
+/* .wrap {
+	width: 500px;
 	margin: auto;
-}
+} */
 .flo .rig a {
 	background-color: skyblue;
 	color: #fff;
@@ -78,8 +79,11 @@ a {
 .ho_detail h3 {
 	margin-top: 20px;
 }
-.ho_intro p {
-	font-size: 16px;
+.ho_image img {
+	max-width: 100%;
+}
+.ho_intro {
+	display: none;
 }
 .ho_facility li {
 	display: inline-block;
@@ -91,3 +95,33 @@ a {
 .ho_return p {
 	text-align: right;
 }
+
+/*  mobile  */
+
+
+/*  tablet & desktop  */
+@media all and (min-width: 501px) {
+	
+	body {
+		color: red;
+	}
+
+	.wrap {
+		width: 980px;
+		margin: auto;
+	}
+	.home img {
+		max-width: 100%;
+		margin-left: 195px;
+	}
+	.ho_intro {
+		display: block;
+	}
+	.ho_intro p {
+		font-size: 16px;
+	}
+	.ho_image img {
+		width: 100%;
+	}
+}
+

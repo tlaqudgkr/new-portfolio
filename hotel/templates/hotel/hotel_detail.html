@@ -4,13 +4,11 @@
 <div class="ho_detail">
     <h1>호텔 : {{ object.name }} <small><a href="{% url 'hotel:hotel_edit' pk=hotel.pk %}">수정</a> <a href="{% url 'hotel:hotel_delete' object.pk %}">삭제</a></small></h1>
 
-    <div>
+    <div class="ho_image">
         <h3>호텔 사진</h3>
-        <div>
-            {% for image in object.image_set.all %}
-            <img src="{% get_media_prefix %}{{ image }}" alt="{{ image.filename }}" width="550" height="400">
-            {% endfor %}
-        </div>
+        {% for image in object.image_set.all %}
+        <img src="{% get_media_prefix %}{{ image }}" alt="{{ image.filename }}">
+        {% endfor %}
     </div>
 
     <div class="ho_intro">
@@ -36,7 +34,7 @@
         </ul>
     </div>
     
-    <div>
+    <div class="ho_locat">
         <h3>호텔 위치</h3>
         <div id="mapholder"></div>
 
