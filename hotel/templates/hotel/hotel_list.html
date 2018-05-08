@@ -1,8 +1,9 @@
 {% extends 'hotel/base.html' %}
-
+{% load staticfiles %}
 {% block sub_title_hotel %}
 <div class="jumbotron home">
     <h1>Hotel & Tourist Spot in Jeonju</h1>
+    <img src="{% static 'images/jeonju.jpg' %}" alt="전주">
 </div>
 {% endblock %}
 

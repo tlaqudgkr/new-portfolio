@@ -18,10 +18,12 @@
         
         <nav class="flo clearfix">
             <div class="rig">
-                <a href="{% url 'home' %}">Home</a>
-                <a href="{% url 'hotel:hotel_list' %}">Hotel</a>
-                <a href="{% url 'tourist:tourist_list' %}">Tourist Spot</a>
-                <a href="{% url 'board:board_list' %}">자유게시판</a>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'hotel:hotel_list' %}">Hotel</a></li>
+                    <li><a href="{% url 'tourist:tourist_list' %}">Tourist Spot</a></li>
+                    <li><a href="{% url 'board:board_list' %}">자유게시판</a></li>
+                </ul>
             </div>
             <div class="lef">
                 {% if user.is_authenticated %}

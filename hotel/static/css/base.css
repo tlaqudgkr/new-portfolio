@@ -32,6 +32,9 @@ a {
 	text-decoration: none;
 }
 
+
+/*       mobile       */
+
 /*    home    */
 .home {
 	background-color: rgb(104, 104, 103);
@@ -96,20 +99,57 @@ a {
 	text-align: right;
 }
 
-/*  mobile  */
+
 
 
 /*  tablet & desktop  */
 @media all and (min-width: 501px) {
 	
-	body {
+	/* body {
 		color: red;
-	}
+	} */
 
 	.wrap {
 		width: 980px;
 		margin: auto;
 	}
+	.flo {
+		background-color: skyblue;
+	}
+	.flo .rig ul {
+		float: left;
+		text-align: center;
+	}
+	.flo .lef {
+		float: right;
+		padding: 7px 0;
+		/* margin: 7px 0; */
+	}
+	.flo .lef a:hover {
+		background-color: #464646;
+		padding: 7px 0;
+	}
+	.flo .rig ul li {
+		display: inline-block;
+		/* background-color: #fff; */
+		/* color: #000; */
+		/* text-align: center; */
+		/* padding: 7px 0; */
+		margin-right: 10px;
+		/* border-left: 1px solid #000; */
+	}
+	.flo .rig ul li a {
+		color: #fff;
+		/* background-color: #fff; */
+		margin-bottom: 0;
+		/* margin-left: 20px;
+		margin-right: 20px; */
+		border-left: 1px solid #fff;
+	}
+	.flo .rig ul li a:hover {
+		background-color: #464646;
+	}
+
 	.home img {
 		max-width: 100%;
 		margin-left: 195px;
