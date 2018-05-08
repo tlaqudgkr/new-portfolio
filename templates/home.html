@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block title %}
-<div class="jumbotron home">
+<div class="home carousel-inner">
     <h1>Hotel & Tourist Spot in Jeonju</h1>
-    <img src="{% static 'images/jeonju.jpg' %}" alt="전주">
+    <div class="item active">
+        <img src="{% static 'images/jeonju.jpg' %}" alt="전주" style="width: 590px; height: 390px;">
+    </div>
+    <div class="item">
+        <img src="{% static 'images/jeonju2.jpg' %}" alt="전주" style="width: 590px; height: 390px;">
+    </div>
+    <div class="item">
+        <img src="{% static 'images/jeonju3.jpg' %}" alt="전주" style="width: 590px; height: 390px;">
+    </div>
 </div>
 {% endblock %}
 
 {% block content %}
-
+<p>Hotel & Tourist Spot in Jeonju</p>
 {% if user.is_authenticated %}
 {% else %}로그인 후 보다 많은 기능을 확인해 보세요^^.
 {% endif %}
+
 
 {% endblock %}

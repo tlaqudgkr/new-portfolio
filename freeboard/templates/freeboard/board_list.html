@@ -9,11 +9,14 @@
 
 {% block board_content %}
 <h1>자유게시판 <a href="{% url 'board:board_new'%}">새글쓰기</a></h1>
-<ol>
-    {% for category in categorys %}
-    <li><a href="{% url 'board:board_list' %}?category={{ category }}">{{ category }}</a></li>
-    {% endfor %}
-</ol>
+
+<div class="bo_cate">
+    <ul>
+        {% for category in categorys %}
+        <li><a href="{% url 'board:board_list' %}?category={{ category }}">{{ category }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
 <ul>
 {% for board in boards %}
     <li><a href="{% url 'board:board_detail' pk=board.pk %}">{{ board }}</a></li>

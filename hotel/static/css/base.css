@@ -25,7 +25,7 @@ ul {
 body {
 	text-align: justify;
     margin: 0;
-	color: black;
+	color: #464646;
 }
 a {
 	color: #464646;
@@ -35,13 +35,16 @@ a {
 
 /*       mobile       */
 
+/*                hotel               */
+
 /*    home    */
 .home {
 	background-color: rgb(104, 104, 103);
 }
 .home h1 {
 	text-align: center;
-	height: 100px;
+	height: 70px;
+	color: skyblue;
 }
 .home img {
 	max-width: 100%;
@@ -67,20 +70,18 @@ a {
 	background-color: #464646;
 }
 
-
-
-/*     hotel      */
-
 /*      list      */
-.ho_list {
+/* .ho_list {
 	color: #fff;
 	background-color: skyblue;
-}
+} */
 
 /*     detail     */
 
 .ho_detail h3 {
 	margin-top: 20px;
+	margin-bottom: 10px;
+	color: skyblue;
 }
 .ho_image img {
 	max-width: 100%;
@@ -95,8 +96,53 @@ a {
 .ho_room li {
 	display: inline-block;
 }
+.ho_link p a:hover {
+	color: skyblue;
+}
 .ho_return p {
 	text-align: right;
+	margin-top: 30px;
+}
+.ho_return p a:hover {
+	color: red;
+}
+
+
+/*                turist               */
+
+.tu_detail h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	color: skyblue;
+}
+.tu_image img {
+	max-width: 100%;
+}
+.tu_intro p, .tu_address p {
+	font-size: 20px;
+}
+.tu_return p {
+	text-align: right;
+	margin-top: 30px;
+}
+.tu_return p a:hover {
+	color: red;
+}
+
+
+
+/*                freeboard               */
+
+.bo_cate ul {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.bo_cate li {
+	display: inline-block;
+}
+.bo_cate li a {
+	font-size: 25px;
+	font-weight: bold;
 }
 
 
@@ -115,10 +161,10 @@ a {
 	}
 	.flo {
 		background-color: skyblue;
+		height: 41px;
 	}
 	.flo .rig ul {
 		float: left;
-		text-align: center;
 	}
 	.flo .lef {
 		float: right;
@@ -131,23 +177,24 @@ a {
 	}
 	.flo .rig ul li {
 		display: inline-block;
-		/* background-color: #fff; */
 		/* color: #000; */
 		/* text-align: center; */
 		/* padding: 7px 0; */
-		margin-right: 10px;
+		/* margin-right: 10px; */
 		/* border-left: 1px solid #000; */
+		margin-left: 30px;
+		width: 150px;
 	}
 	.flo .rig ul li a {
 		color: #fff;
-		/* background-color: #fff; */
 		margin-bottom: 0;
+		font-size: 20px;
 		/* margin-left: 20px;
 		margin-right: 20px; */
-		border-left: 1px solid #fff;
 	}
 	.flo .rig ul li a:hover {
 		background-color: #464646;
+		/* padding: 10px; */
 	}
 
 	.home img {
@@ -157,11 +204,12 @@ a {
 	.ho_intro {
 		display: block;
 	}
-	.ho_intro p {
-		font-size: 16px;
-	}
 	.ho_image img {
 		width: 100%;
+	}
+	.ho_intro p, .ho_facility li, .ho_room li {
+		font-size: 20px;
+		color: #464646;
 	}
 }
 

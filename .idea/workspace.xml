@@ -6,8 +6,9 @@
       <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change beforePath="$PROJECT_DIR$/freeboard/templates/freeboard/board_list.html" afterPath="$PROJECT_DIR$/freeboard/templates/freeboard/board_list.html" />
       <change beforePath="$PROJECT_DIR$/hotel/static/css/base.css" afterPath="$PROJECT_DIR$/hotel/static/css/base.css" />
-      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/hotel_list.html" afterPath="$PROJECT_DIR$/hotel/templates/hotel/hotel_list.html" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change beforePath="$PROJECT_DIR$/hotel/templates/hotel/hotel_detail.html" afterPath="$PROJECT_DIR$/hotel/templates/hotel/hotel_detail.html" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
+      <change beforePath="$PROJECT_DIR$/tourist/templates/tourist/tourist_detail.html" afterPath="$PROJECT_DIR$/tourist/templates/tourist/tourist_detail.html" />
       <change beforePath="$PROJECT_DIR$/tourist/templates/tourist/tourist_list.html" afterPath="$PROJECT_DIR$/tourist/templates/tourist/tourist_list.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,23 +24,23 @@
         <entry file="file://$PROJECT_DIR$/hotel/templates/hotel/hotel_list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
-              <caret line="5" column="57" lean-forward="true" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="board_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/freeboard/templates/freeboard/board_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
               <caret line="5" column="57" lean-forward="false" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tourist_list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="board_list.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/freeboard/templates/freeboard/board_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tourist_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tourist/templates/tourist/tourist_list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
@@ -55,8 +56,7 @@
             <state relative-caret-position="368">
               <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
               <folding>
-                <marker date="1525695949593" expanded="true" signature="280:481" ph="..." />
-                <marker date="1525695949593" expanded="true" signature="1047:2995" ph="..." />
+                <marker date="1525782283528" expanded="true" signature="280:481" ph="..." />
               </folding>
             </state>
           </provider>
@@ -65,8 +65,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+            <state relative-caret-position="552">
+              <caret line="24" column="77" lean-forward="false" selection-start-line="24" selection-start-column="77" selection-end-line="24" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -75,8 +75,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="22" />
+            <state relative-caret-position="69">
+              <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -134,7 +134,6 @@
         <option value="$PROJECT_DIR$/freeboard/urls.py" />
         <option value="$PROJECT_DIR$/hotel/models.py" />
         <option value="$PROJECT_DIR$/hotel/views.py" />
-        <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/templates/registration/logged_out.html" />
         <option value="$PROJECT_DIR$/hotel/templates/hotel/hotel_detail.html" />
@@ -142,6 +141,7 @@
         <option value="$PROJECT_DIR$/hotel/templates/hotel/hotel_list.html" />
         <option value="$PROJECT_DIR$/freeboard/templates/freeboard/board_list.html" />
         <option value="$PROJECT_DIR$/tourist/templates/tourist/tourist_list.html" />
+        <option value="$PROJECT_DIR$/templates/home.html" />
       </list>
     </option>
   </component>
@@ -166,8 +166,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,6 +196,19 @@
             <path>
               <item name="new-portfolio" type="b2602c69:ProjectViewProjectNode" />
               <item name="new-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="hotel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="new-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="new-portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="new-portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="hotel" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="hotel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -602,46 +615,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/base.html" />
     <entry file="file://$PROJECT_DIR$/templates/registration/home.html" />
-    <entry file="file://$PROJECT_DIR$/hotel/templates/hotel/hotel_detail.html">
+    <entry file="file://$PROJECT_DIR$/hotel/templates/hotel/hotel_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding>
-            <marker date="1525695949593" expanded="true" signature="280:481" ph="..." />
-            <marker date="1525695949593" expanded="true" signature="1047:2995" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+        <state relative-caret-position="115">
+          <caret line="5" column="57" lean-forward="false" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="22" />
+        <state relative-caret-position="69">
+          <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotel/templates/hotel/hotel_list.html">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="57" lean-forward="true" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+        <state relative-caret-position="552">
+          <caret line="24" column="77" lean-forward="false" selection-start-line="24" selection-start-column="77" selection-end-line="24" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/freeboard/templates/freeboard/board_list.html">
+    <entry file="file://$PROJECT_DIR$/hotel/templates/hotel/hotel_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="57" lean-forward="false" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
-          <folding />
+        <state relative-caret-position="368">
+          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding>
+            <marker date="1525782283528" expanded="true" signature="280:481" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -649,6 +653,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="57" lean-forward="false" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freeboard/templates/freeboard/board_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
           <folding />
         </state>
       </provider>

@@ -20,7 +20,7 @@
         <h3>호텔 시설</h3>
         <ul>
             {% for facility in object.facility_set.all %}
-            <li>{{ facility.get_facilityname_display }}</li>
+            <li>{{ facility.get_facilityname_display }},</li>
             {% endfor %}
         </ul>
     </div>
@@ -29,7 +29,7 @@
         <h3>호텔 객실</h3>
         <ul>
             {% for room in object.room_set.all %}
-            <li>{{ room.get_roomname_display }}</li>
+            <li>{{ room.get_roomname_display }},</li>
             {% endfor %}
         </ul>
     </div>
@@ -83,13 +83,13 @@
         </script>
     </div>
 
-    <div>
+    <div class="ho_link">
         <h3>호텔 사이트 링크 바로가기</h3>
         <p>해당 호텔사이트 바로가기 <a href="{{ object.site }}" target="_blank">{{ object.site }}</a></p><br><br><br>
     </div>
     
     <div class="ho_return">
-        <p><a href="{% url 'hotel:hotel_list' %}">Hotel List 돌아가기</a></p><br><br><br><br><br>
+        <p><a href="{% url 'hotel:hotel_list' %}">Hotel List 돌아가기</a></p><br><br><br>
     </div>
 </div>
 
