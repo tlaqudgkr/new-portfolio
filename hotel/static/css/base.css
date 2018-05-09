@@ -205,11 +205,12 @@ a {
 		display: block;
 	}
 	.ho_image img {
-		width: 100%;
+		/* width: 100%; */
 	}
 	.ho_intro p, .ho_facility li, .ho_room li {
 		font-size: 20px;
 		color: #464646;
 	}
+
 }
 
