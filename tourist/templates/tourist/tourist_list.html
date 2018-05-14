@@ -13,11 +13,9 @@
 </div>
 
 <div>
-    <ol>
     {% for obj in object_list %}
-        <li><a href="{% url 'tourist:tourist_detail' obj.pk %}">{{ obj }}</a></li>
+    <p><a href="{% url 'tourist:tourist_detail' obj.pk %}">{{ obj }}</a></p>
     {% endfor %}
-    </ol>
 </div>
 
 {% if is_paginated %}

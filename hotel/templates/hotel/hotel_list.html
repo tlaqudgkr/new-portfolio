@@ -11,11 +11,15 @@
 <div class="container ho_list clearfix">
     <h1 id="tog">Hotel List {% if user.is_authenticated %}<small><a href="{% url 'hotel:hotel_create' %}">호텔 추가</a></small></h1>
 </div>
-<ol id="show">
-    {% for obj in object_list %}
-    <li><a href="{% url 'hotel:hotel_detail' obj.pk %}">{{ obj }}</a></li>
-    {% endfor %}
-</ol>
+<div id="show">
+    <table>
+        {% for obj in object_list %}
+        <tr>
+            <td><a href="{% url 'hotel:hotel_detail' obj.pk %}">{{ obj }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 {% if is_paginated %}
     <div class="pagination">
         <span class="page-links">

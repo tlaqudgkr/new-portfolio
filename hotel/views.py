@@ -10,7 +10,7 @@ from django.urls import reverse_lazy
 
 class HotelListView(ListView):
     model = Hotel
-    paginate_by = 3
+    paginate_by = 10
 
 class HotelDetailView(DetailView):
     model = Hotel
