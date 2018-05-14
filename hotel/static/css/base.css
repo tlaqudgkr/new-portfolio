@@ -70,10 +70,14 @@ a {
 	background-color: #464646;
 }
 
+
+/*			hotel			*/
+
 /*      list      */
-/* .ho_list {
+/* ol.show li a {
 	color: #fff;
 	background-color: skyblue;
+	margin: 10px;
 } */
 
 /*     detail     */
@@ -133,6 +137,7 @@ a {
 
 /*                freeboard               */
 
+/*		list		*/
 .bo_cate ul {
 	margin-top: 20px;
 	margin-bottom: 10px;
@@ -145,6 +150,36 @@ a {
 	font-weight: bold;
 }
 
+.bo_table table {
+	width: 500px;
+}
+
+table, th, td {
+	border-top: 1px solid rgb(104, 104, 103);
+	border-collapse: collapse;
+	padding: 10px;
+	text-align: center;
+}
+table tr .bo_lef {
+	text-align: left;
+}
+
+.bo_table table tr td a {
+	color: rgb(75, 203, 253);
+}
+
+/*		detail		*/
+
+.bo_detail .bo_title {
+	font-size: 25px;
+	font-weight: bolder;
+	margin: 10px 0;
+	color: rgb(75, 203, 253);
+}
+
+.bo_detail .bo_text {
+	font-size: 17px;
+}
 
 
 
@@ -204,13 +239,36 @@ a {
 	.ho_intro {
 		display: block;
 	}
-	.ho_image img {
-		/* width: 100%; */
-	}
+	/* .ho_image img {
+		width: 100%;
+	} */
 	.ho_intro p, .ho_facility li, .ho_room li {
 		font-size: 20px;
 		color: #464646;
 	}
+
+
+
+	/*		board		*/
+	.bo_table table {
+		width: 980px;
+	}
+	
+	/* table, th, td {
+		border-top: 1px solid blue;
+		border-collapse: collapse;
+		padding: 10px;
+		text-align: center;
+	}
+	table tr .bo_lef {
+		text-align: left;
+	}
+	
+	.bo_table table tr td a {
+		color: rgb(75, 203, 253);
+	} */
+
+
 
 }
 

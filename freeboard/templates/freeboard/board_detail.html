@@ -6,15 +6,12 @@
 
 
 {% block board_content %}
-<p>{{ boards.id }}번 <a href="{% url 'board:board_edit' pk=boards.pk %}">수정</a> <a href="{% url 'board:board_remove' pk=boards.pk %}">삭제</a></p>
-
-<div>
-    <ul>
-        <li>제목 : {{ boards.title }}</li>
-        <li>내용 : {{ boards.text }}</li>
-        <li>작성일 : {{ boards.created_date }}</li>
-        <li>수정일 : {{ boards.modified_date }}</li>
-    </ul>
+<div class="bo_detail">
+    <h1><a href="{% url 'board:board_list' %}">자유게시판</a> <a href="{% url 'board:board_edit' pk=boards.pk %}">수정</a> <a href="{% url 'board:board_remove' pk=boards.pk %}">삭제</a></h1>
+    <div>
+        <div class="bo_title">{{ boards.title }}</div>
+        <div class="bo_text">{{ boards.text }}</div>
+    </div>
 </div>
 
 <hr>

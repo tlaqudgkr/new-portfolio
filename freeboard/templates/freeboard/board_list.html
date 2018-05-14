@@ -17,12 +17,25 @@
         {% endfor %}
     </ul>
 </div>
-<ul>
-{% for board in boards %}
-    <li><a href="{% url 'board:board_detail' pk=board.pk %}">{{ board }}</a></li>
-    <p>Comments: {{ board.comments.count }}</p>
-{% endfor %}
-</ul>
+
+<div class="bo_table">
+    <table class="wrap">
+        <tr>
+            <th>순번</th>
+            <th class="bo_lef">제목</th>
+            <th>댓글</th>
+            <th>작성일</th>
+        </tr>
+    {% for board in boards %}
+        <tr>
+            <td>{{ board.id }}</td>
+            <td class="bo_lef"><a href="{% url 'board:board_detail' pk=board.pk %}">{{ board }}</a></td>
+            <td>{{ board.comments.count }}</td>
+            <td>{{ board.created_date|date:"M/d"}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</div><br><br><br><br><br><br>
 
 
 
