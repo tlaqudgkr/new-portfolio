@@ -2,7 +2,11 @@
 {% load static %}
 {% block sub_content_hotel %}
 <div class="ho_detail">
-    <h1>호텔 : {{ object.name }} <small><a href="{% url 'hotel:hotel_edit' pk=hotel.pk %}">수정</a> <a href="{% url 'hotel:hotel_delete' object.pk %}">삭제</a></small></h1>
+    <h1>호텔 : {{ object.name }}
+        {% if user.is_superuser %}
+        <small><a href="{% url 'hotel:hotel_edit' pk=hotel.pk %}">수정</a> <a href="{% url 'hotel:hotel_delete' object.pk %}">삭제</a></small>
+        {% endif %}
+    </h1>
 
     <div class="ho_image w3-content w3-section ">
         <h3>호텔 사진</h3>

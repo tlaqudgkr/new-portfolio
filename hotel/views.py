@@ -5,6 +5,8 @@ from django.views.generic.edit import CreateView, DeleteView
 from hotel.models import Hotel, Room, Facility, Image
 from hotel.form import ImageForm, HotelForm
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 # Create your views here.
 
@@ -12,6 +14,7 @@ class HotelListView(ListView):
     model = Hotel
     paginate_by = 10
 
+@method_decorator(login_required, name='dispatch')
 class HotelDetailView(DetailView):
     model = Hotel
 
@@ -20,6 +23,7 @@ class HotelDetailView(DetailView):
 #     model = Hotel
 #     fields = ['name', 'text', 'lon', 'lat', 'zoom', 'site']
 
+@login_required
 def hotel_create(request):
     if request.user.is_superuser:
         if request.method == 'POST':
@@ -41,7 +45,7 @@ def hotel_create(request):
     else:
         return render(request, 'hotel/hotel_home.html', {})
 
-
+@login_required
 def hotel_edit(request, pk):
     hotel = get_object_or_404(Hotel, pk=pk)
     if request.method == 'POST':
@@ -62,7 +66,7 @@ def hotel_edit(request, pk):
         image = ImageForm(instance=hotel)
     return render(request, 'hotel/hotel_edit.html', {'form': form, 'image': image})
 
-
+@method_decorator(login_required, name='dispatch')
 class HotelDeleteView(DeleteView):
     model = Hotel
     success_url = reverse_lazy('hotel:hotel_list')

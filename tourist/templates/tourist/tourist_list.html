@@ -9,7 +9,11 @@
 
 {% block tourist_content %}
 <div>
-    <h1>Tourist Spot <a href="{% url 'tourist:tourist_create' %}">관광지 추가</a></h1>
+    <h1>Tourist Spot
+        {% if user.is_superuser %}
+            <a href="{% url 'tourist:tourist_create' %}">관광지 추가</a>
+        {% endif %}
+    </h1>
 </div>
 
 <div>

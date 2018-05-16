@@ -5,7 +5,11 @@
 
 {% block tourist_content %}
 <div class="tu_detail">
-    <h1>관광지 : {{ object.name }} <a href="{% url 'tourist:tourist_edit' pk=tourist.pk %}">수정</a> <a href="{% url 'tourist:tourist_delete' object.pk %}">삭제</a></h1>
+    <h1>관광지 : {{ object.name }}
+        {% if user.is_superuser %}
+        <a href="{% url 'tourist:tourist_edit' pk=tourist.pk %}">수정</a> <a href="{% url 'tourist:tourist_delete' object.pk %}">삭제</a>
+        {% endif %}
+    </h1>
 
     <div class="tu_image">
         <h3>관광지 사진</h3>
