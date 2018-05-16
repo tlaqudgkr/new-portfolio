@@ -21,23 +21,25 @@ class HotelDetailView(DetailView):
 #     fields = ['name', 'text', 'lon', 'lat', 'zoom', 'site']
 
 def hotel_create(request):
-    if request.method == 'POST':
-        form = HotelForm(request.POST)
-        if form.is_valid():
-            hotel = form.save(commit=False)
-            hotel.save()
-
-            upimgs = request.FILES.getlist('image')
-            for upimg in upimgs:
-                img = Image()
-                img.image = upimg
-                img.hotel = hotel
-                img.save()
-            return redirect('hotel:hotel_detail', pk=hotel.pk)
+    if request.user.is_superuser:
+        if request.method == 'POST':
+            form = HotelForm(request.POST)
+            if form.is_valid():
+                hotel = form.save(commit=False)
+                hotel.save()
+                upimgs = request.FILES.getlist('image')
+                for upimg in upimgs:
+                    img = Image()
+                    img.image = upimg
+                    img.hotel = hotel
+                    img.save()
+                return redirect('hotel:hotel_detail', pk=hotel.pk)
+        else:
+            form = HotelForm()
+            image = ImageForm()
+        return render(request, 'hotel/hotel_edit.html', {'form': form, 'image': image})
     else:
-        form = HotelForm()
-        image = ImageForm()
-    return render(request, 'hotel/hotel_edit.html', {'form': form, 'image': image})
+        return render(request, 'hotel/hotel_home.html', {})
 
 
 def hotel_edit(request, pk):

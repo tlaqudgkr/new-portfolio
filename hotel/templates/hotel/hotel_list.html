@@ -9,7 +9,11 @@
 
 {% block sub_content_hotel %}
 <div class="container ho_list clearfix">
-    <h1 id="tog">Hotel List {% if user.is_authenticated %}<small><a href="{% url 'hotel:hotel_create' %}">호텔 추가</a></small></h1>
+    <h1 id="tog">Hotel List
+        {% if user.is_superuser %}
+        <small><a href="{% url 'hotel:hotel_create' %}">호텔 추가</a></small>
+        {% endif %}
+    </h1>
 </div>
 <div id="show">
     <table>
@@ -34,7 +38,6 @@
             {% endif %}
         </span>
     </div>
-{% endif %}
 {% endif %}
 
 
