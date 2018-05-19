@@ -12,7 +12,7 @@ from django.utils.decorators import method_decorator
 
 class TouristListView(ListView):
     model = Tourist
-    paginate_by = 3
+    paginate_by = 10
 
 @method_decorator(login_required, name='dispatch')
 class TouristDetailView(DetailView):

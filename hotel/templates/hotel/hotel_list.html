@@ -16,7 +16,7 @@
     </h1>
 </div>
 <div id="show">
-    <table>
+    <table class="table">
         {% for obj in object_list %}
         <tr>
             <td><a href="{% url 'hotel:hotel_detail' obj.pk %}">{{ obj }}</a></td>

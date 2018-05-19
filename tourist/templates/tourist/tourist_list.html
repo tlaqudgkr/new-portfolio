@@ -17,9 +17,13 @@
 </div>
 
 <div>
-    {% for obj in object_list %}
-    <p><a href="{% url 'tourist:tourist_detail' obj.pk %}">{{ obj }}</a></p>
-    {% endfor %}
+    <table class="table">
+        {% for obj in object_list %}
+        <tr>
+            <td><a href="{% url 'tourist:tourist_detail' obj.pk %}">{{ obj }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
 
 {% if is_paginated %}

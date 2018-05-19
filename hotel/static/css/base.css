@@ -74,11 +74,8 @@ a {
 /*			hotel			*/
 
 /*      list      */
-/* ol.show li a {
-	color: #fff;
-	background-color: skyblue;
-	margin: 10px;
-} */
+
+
 
 /*     detail     */
 
@@ -159,6 +156,7 @@ table, th, td {
 	border-collapse: collapse;
 	padding: 10px;
 	text-align: center;
+	margin: 30px 0;
 }
 table tr .bo_lef {
 	text-align: left;
