@@ -10,7 +10,12 @@
 {% endblock %}
 
 {% block content %}
-<p>Hotel & Tourist Spot in Jeonju</p>
+<p style="margin-bottom: 20px;">Hotel & Tourist Spot in Jeonju</p>
+<h3>각 챕터별 프로그램 언어 사용 내용</h3>
+<p>Html, css, jquery, javascript, python, Django, bootstrap 기능을 사용</p><br>
+<p><a href="{% url 'hotel:hotel_list' %}">Hotel</a><span>- html, css, Javascript, python, Django</span></p>
+<p><a href="{% url 'tourist:tourist_list' %}">Tourist Spot</a></p>
+<p><a href="{% url 'board:board_list' %}">자유게시판</a></p>
 {% if user.is_authenticated %}
 {% else %}로그인 후 보다 많은 기능을 확인해 보세요^^.
 {% endif %}

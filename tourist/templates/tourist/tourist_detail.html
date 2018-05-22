@@ -7,14 +7,14 @@
 <div class="tu_detail">
     <h1>관광지 : {{ object.name }}
         {% if user.is_superuser %}
-        <a href="{% url 'tourist:tourist_edit' pk=tourist.pk %}">수정</a> <a href="{% url 'tourist:tourist_delete' object.pk %}">삭제</a>
+        <small><a href="{% url 'tourist:tourist_edit' pk=tourist.pk %}">수정</a> <a href="{% url 'tourist:tourist_delete' object.pk %}">삭제</a></small>
         {% endif %}
     </h1>
 
     <div class="tu_image">
         <h3>관광지 사진</h3>
             {% for image in object.image_set.all %}
-                <img src="{% get_media_prefix %}{{ image }}" alt="{{ image.filename }}">
+                <img src="{% get_media_prefix %}{{ image }}" alt="{{ image.filename }}" style="width: 100%; height: 500px;">
             {% endfor %}
     </div>
 
@@ -23,6 +23,57 @@
         <p>{{ object.text }}</p>
     </div>
 
+    <div class="ho_locat">
+        <h3>호텔 위치</h3>
+        <div id="mapholder"></div>
+
+        <script src="https://maps.google.com/maps/api/js?key=AIzaSyDywxHoX-tjQ3Cb_TlDyUTmNspIu6LzW_o"></script>
+
+        <script>
+        window.onload = function() {
+        showPosition()
+        };
+        var x = document.getElementByid("demo");
+            function showPosition() {
+                var lat = {{ object.lat }};
+                var lon = {{ object.lon }};
+                var latlon = new google.maps.LatLng(lat, lon)
+                var mapholder = document.getElementById('mapholder')
+                mapholder.style.height = '250px';
+                mapholder.style.width = '100%';
+
+                var myOptions = {
+                center:latlon,zoom:{{ object.zoom }},
+                mapTypeId:google.maps.MapTypeId.ROADMAP,
+                mapTypeControl:false,
+                navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+                }
+
+                var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+                var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+            }
+
+            function showError(error) {
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        x.innerHTML = "User denied the request for Geolocation."
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        x.innerHTML = "Location information is unavailable."
+                        break;
+                    case error.TIMEOUT:
+                        x.innerHTML = "The request to get user location timed out."
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        x.innerHTML = "An unknown error occurred."
+                        break;
+                }
+            }
+
+        </script>
+
+    </div>
+    
     <div class="tu_address">
         <h3>관광지 주소</h3>
         <p>{{ object.address }}</p>

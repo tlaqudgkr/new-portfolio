@@ -8,9 +8,11 @@
 {% endblock %}
 
 {% block board_content %}
-<h1>자유게시판 <a href="{% url 'board:board_new'%}">새글쓰기</a></h1>
+<div class="title clearfix">
+    <h1>자유게시판 <small><a href="{% url 'board:board_new'%}" class="new">새글쓰기</a></small></h1>
+</div>
 
-<div class="bo_cate">
+<div class="bo_cate clearfix">
     <ul>
         {% for category in categorys %}
         <li><a href="{% url 'board:board_list' %}?category={{ category }}">{{ category }}</a></li>

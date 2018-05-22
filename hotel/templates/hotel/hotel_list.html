@@ -8,10 +8,10 @@
 {% endblock %}
 
 {% block sub_content_hotel %}
-<div class="container ho_list clearfix">
+<div class="container ho_list clearfix title">
     <h1 id="tog">Hotel List
         {% if user.is_superuser %}
-        <small><a href="{% url 'hotel:hotel_create' %}">호텔 추가</a></small>
+        <small><a href="{% url 'hotel:hotel_create' %}" class="new">호텔 추가</a></small>
         {% endif %}
     </h1>
 </div>
@@ -25,7 +25,7 @@
     </table>
 </div>
 {% if is_paginated %}
-    <div class="pagination">
+    <div class="pagination mar_bot">
         <span class="page-links">
             {% if page_obj.has_previous %}
                 <a href="{% url 'hotel:hotel_list' %}?page={{ page_obj.previous_page_number }}">previous</a>

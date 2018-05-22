@@ -8,10 +8,10 @@
 {% endblock %}
 
 {% block tourist_content %}
-<div>
+<div class="title">
     <h1>Tourist Spot
         {% if user.is_superuser %}
-            <a href="{% url 'tourist:tourist_create' %}">관광지 추가</a>
+            <small><a href="{% url 'tourist:tourist_create' %}" class="new">관광지 추가</a></small>
         {% endif %}
     </h1>
 </div>
@@ -27,7 +27,7 @@
 </div>
 
 {% if is_paginated %}
-    <div class="pagination">
+    <div class="pagination mar_bot">
         <span class="page-links">
             {% if page_obj.has_previous %}
                 <a href="{% url 'tourist:tourist_list' %}?page={{ page_obj.previous_page_number }}">previous</a>

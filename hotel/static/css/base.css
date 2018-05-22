@@ -70,12 +70,20 @@ a {
 	background-color: #464646;
 }
 
+.title {
+	margin-top: 20px;
+}
+.title .new {
+	float: right;
+}
 
 /*			hotel			*/
 
 /*      list      */
 
-
+.mar_bot {
+	margin-bottom: 30px;
+}
 
 /*     detail     */
 
@@ -135,17 +143,26 @@ a {
 /*                freeboard               */
 
 /*		list		*/
+
+
 .bo_cate ul {
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
 .bo_cate li {
 	display: inline-block;
+	/* float: left; */
+	margin-left: 160px;
 }
+/* .bo_cate li:last-child {
+	float: right;
+} */
+
 .bo_cate li a {
 	font-size: 25px;
 	font-weight: bold;
 }
+
 
 .bo_table table {
 	width: 500px;
@@ -160,6 +177,12 @@ table, th, td {
 }
 table tr .bo_lef {
 	text-align: left;
+}
+table.table {
+	width: 100%;
+}
+table.table a:hover {
+	color: rgb(75, 203, 253);
 }
 
 .bo_table table tr td a {
@@ -195,6 +218,9 @@ table tr .bo_lef {
 	.flo {
 		background-color: skyblue;
 		height: 43px;
+	}
+	.flo a {
+		height: 29px;;
 	}
 	.flo .rig ul {
 		float: left;
