@@ -32,7 +32,6 @@ a {
 	text-decoration: none;
 }
 
-
 /*       mobile       */
 
 /*                hotel               */
@@ -115,6 +114,32 @@ a {
 .ho_return p a:hover {
 	color: red;
 }
+
+/*      edit        */
+
+form.for p input {
+	width: 100%;
+	font-size: 20px;
+}
+form.for p label {
+	font-size: 20px;
+}
+form.for p {
+	color: #3592cd;
+}
+form.for p textarea {
+	width: 100%;
+
+}
+button.but1 {
+	width: 25%;
+	/*padding-top: 20px;*/
+	/*padding-bottom: 20px;*/
+	font-size: 20px;
+	float: right;
+	margin-top: 20px;
+}
+
 
 
 /*                turist               */

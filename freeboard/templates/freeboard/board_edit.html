@@ -5,10 +5,10 @@
 {% block board_content %}
 <div>
     <h1>새글쓰기</h1>
-    <form class="bo_new" method="post">
+    <form class="bo_new for wrap" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">저장</button>
+        <button class="but1" type="submit">저장</button>
     </form>
 </div>
 {% endblock %}

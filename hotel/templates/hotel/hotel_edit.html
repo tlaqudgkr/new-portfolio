@@ -3,12 +3,12 @@
 {% block sub_title_hotel %}<h3>호텔 추가하기</h3>{% endblock %}
 
 {% block sub_content_hotel %}
-<form class="ho_new wrap" action="" method="post" enctype="multipart/form-data">
+<form class="ho_new wrap for" action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <p>첨부할 이미지를 선택하세요.</p>
     {{ image.as_p }}
-    <button onclick="newfunction()" type="submit">저장</button>
+    <button class="but1" onclick="newfunction()" type="submit">저장</button>
 </form>
 
 <script>
